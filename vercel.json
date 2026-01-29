@@ -4,10 +4,7 @@
       "includeFiles": "dist/**"
     }
   },
-  "builds": [
-    { "src": "api/[[...path]].js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/[[...path]].js" }
+  "rewrites": [
+    { "source": "/:path*", "destination": "/api/[[...path]].js" }
   ]
 }
